@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	.horse {
+		background: url("img/horse.jpg") no-repeat scroll 0% 0% rgba(0, 0, 0, 0);
+		background-position: 0 0;
+		height: 136px;
+		width: 189px;
+	}
+	</style>
+</head>
+<body>
+	<div class="horse">
+		
+	</div>
+</body>
+</html>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var posx = 0;
+        var posy = 0;
+		var x = 3;
+        var y = 3;
+        var count = 0;
+        
+        window.setInterval(function(){
+  			run_now();
+		}, 50);
+
+		function run_now() {
+			posx = x*183;
+			posy = y*134;
+			
+			console.log(posx + " " + posy);
+			x++;
+			if(x>3) {
+				x = 0;
+				y = y + 1;
+			}
+
+			if(y > 3) {
+				x = 0;
+				y = 0;
+			}
+			//console.log(posy+"y");
+            $(".horse").css('background-position-x', -posx);
+            $(".horse").css('background-position-y', -posy);
+		}
+	});
+</script>
