@@ -32,10 +32,10 @@
 		}, 50);
 
 		function run_now() {
-			posx = x*183;
-			posy = y*134;
+			posx = -x*183;
+			posy = -y*134;
 			
-			console.log(posx + " " + posy);
+			//console.log(posx + " " + posy);
 			x++;
 			if(x>3) {
 				x = 0;
@@ -47,8 +47,10 @@
 				y = 0;
 			}
 			//console.log(posy+"y");
-            $(".horse").css('background-position-x', -posx);
-            $(".horse").css('background-position-y', -posy);
+
+			$(".horse").css({'background-position': posx+'px '+ posy+'px'});
+            //$(".horse").css('background-position-x', -posx);
+            //$(".horse").css('background-position-y', -posy);
 		}
 	});
 </script>
